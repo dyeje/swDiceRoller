@@ -3,12 +3,17 @@ function getRandomDieSide(dieLength) {
 }
 
 function rollDice(dice) {
-  var diceResults = dice.map(function (die) {
-    return die[getRandomDiceSide(die.length)]
-  });
+  var allResults = [];
 
-  //flatten
-  diceResults = [].concat.apply([], diceResults)
+  if (dice.blue) {
+    var results = _.map(Array.new(dice.blue), function () {
+      return rollDie(BLUE);
+    });
 
-  return diceResults;
+    allResults.push(results);
+  }
+}
+
+function rollDie(die) {
+  return die[getRandomDieSide(die.length)]
 }
