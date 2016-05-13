@@ -2,18 +2,28 @@ function getRandomDieSide(dieLength) {
   return Math.floor(Math.random() * diceLength);
 }
 
-function rollDice(dice) {
-  var allResults = [];
+// ex.
+// var dicePools = [
+//   { diceCount: 1, diceType: BLUE },
+//   { diceCount: 2, diceType: GREEN },
+//   { diceCount: 4, diceType: PURPLE }
+// ]
 
-  if (dice.blue) {
-    var results = _.map(Array.new(dice.blue), function () {
-      return rollDie(BLUE);
-    });
-
-    allResults.push(results);
-  }
+//flatten and return an array of result objects arrays
+function roll(diceSets) {
+  return _.flattenDeep(_.map(dicePools, function (diceSet) {
+    return diceResults(diceSet.diceCount, dice.diceType);
+  }));
 }
 
-function rollDie(die) {
+//get an array of result objects
+function diceResults(diceCount, diceType) {
+  return _.map(Array.new(diceCount), function () {
+    return rollDie(diceType);
+  });
+}
+
+//get a result object
+function dieResult(die) {
   return die[getRandomDieSide(die.length)]
 }
