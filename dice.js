@@ -2,11 +2,11 @@
 var //good
     SUCCESS = { success: 1 }
     ADVANTAGE = { advantage: 1 }
-    TRIUMPH = { success: 1 special: 'Triumph' }
+    TRIUMPH = { success: 1, special: 'Triumph' }
     //bad
     DEFEAT = { success: -1 }
     DISADVANTAGE = { advantage: -1 }
-    DESPAIR = { success: -1 special: 'Despair' }
+    DESPAIR = { success: -1, special: 'Despair' }
     //force
     DARK_SIDE = { force: -1 }
     LIGHT_SIDE = { force: 1 }
