@@ -11,7 +11,7 @@ function getRandomDieSide(dieLength) {
 
 //flatten and return an array of result objects arrays
 function roll(diceSets) {
-  return _.flattenDeep(_.map(dicePools, function (diceSet) {
+  return _.flattenDeep(_.map(diceSets, function (diceSet) {
     return diceResults(diceSet.diceCount, dice.diceType);
   }));
 }
