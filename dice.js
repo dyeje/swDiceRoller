@@ -1,15 +1,15 @@
     //dice values
 var //good
-    SUCCESS = { success: 1 }
-    ADVANTAGE = { advantage: 1 }
-    TRIUMPH = { success: 1, special: 'Triumph' }
+    SUCCESS = { success: 1 },
+    ADVANTAGE = { advantage: 1 },
+    TRIUMPH = { success: 1, special: 'Triumph' },
     //bad
-    DEFEAT = { success: -1 }
-    DISADVANTAGE = { advantage: -1 }
-    DESPAIR = { success: -1, special: 'Despair' }
+    DEFEAT = { success: -1 },
+    DISADVANTAGE = { advantage: -1 },
+    DESPAIR = { success: -1, special: 'Despair' },
     //force
-    DARK_SIDE = { force: -1 }
-    LIGHT_SIDE = { force: 1 }
+    DARK_SIDE = { force: -1 },
+    LIGHT_SIDE = { force: 1 };
 
     //dice
 var //D6
@@ -81,15 +81,15 @@ var //D6
     ],
     FORCE = [
       [DARK_SIDE],
-      [LIGHT_SIDE, LIGHT_SIDE]
+      [LIGHT_SIDE, LIGHT_SIDE],
       [DARK_SIDE],
-      [LIGHT_SIDE, LIGHT_SIDE]
+      [LIGHT_SIDE, LIGHT_SIDE],
       [DARK_SIDE],
-      [LIGHT_SIDE, LIGHT_SIDE]
+      [LIGHT_SIDE, LIGHT_SIDE],
       [DARK_SIDE],
-      [LIGHT_SIDE]
+      [LIGHT_SIDE],
       [DARK_SIDE],
-      [LIGHT_SIDE]
+      [LIGHT_SIDE],
       [DARK_SIDE],
       [DARK_SIDE, DARK_SIDE]
-    ]
+    ];
