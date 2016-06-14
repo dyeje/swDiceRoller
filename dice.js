@@ -8,8 +8,8 @@ var //good
     DISADVANTAGE = { advantage: -1 },
     DESPAIR = { success: -1, special: 'Despair' },
     //force
-    DARK_SIDE = { force: -1 },
-    LIGHT_SIDE = { force: 1 };
+    DARK_SIDE = { darkside: 1 },
+    LIGHT_SIDE = { lightside: 1 };
 
     //dice
 var //D6
