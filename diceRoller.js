@@ -16,8 +16,41 @@ rollButton.click(function (e) {
   }));
 
   var diceResults = roll(diceSets);
-  console.log(sumDiceResults(diceResults));
+  displayResults(sumDiceResults(diceResults));
 });
+
+function displayResults (diceResults) {
+  //success
+  var successDisplay = diceResults.success;
+
+  if (successDisplay > 0) {
+    successDisplay = successDisplay + " success"
+  } else if (successDisplay < 0) {
+    successDisplay = Math.abs(successDisplay) + " failure"
+  }
+
+  $('.success-value').html(successDisplay);
+
+  //advantage
+  var advantageDisplay = diceResults.advantage;
+
+  if (advantageDisplay > 0) {
+    advantageDisplay = advantageDisplay + " advantage"
+  } else if (advantageDisplay < 0) {
+    advantageDisplay = Math.abs(advantageDisplay) + " disadvantage"
+  }
+
+  $('.advantage-value').html(advantageDisplay);
+
+  //lightside
+  $('.lightside-value').html(diceResults.lightside);
+
+  //darkside
+  $('.darkside-value').html(diceResults.darkside);
+
+  //speial
+  $('.special-value').html(diceResults.special.join(', '))
+}
 
 function randomInt(max) {
   return Math.floor(Math.random() * max);
