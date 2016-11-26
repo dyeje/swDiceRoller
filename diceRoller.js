@@ -1,7 +1,18 @@
-var rollButton = $('a.roll');
 var diceForm = $('form.dice-form');
 
-rollButton.click(function (e) {
+$('a.quantity-control').click(function (e) {
+  e.preventDefault();
+
+  var input = $(this).siblings('input');
+  var value = parseInt((input.val() || 0), 10);
+  if ($(this).hasClass('up')) {
+    input.val(value + 1);
+  } else {
+    input.val(Math.max(value - 1, 0));
+  }
+});
+
+$('a.roll').click(function (e) {
   var diceInputs = diceForm.serializeArray();
 
   var diceSets = _.compact(_.map(diceInputs, function (diceInput) {
