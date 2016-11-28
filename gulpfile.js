@@ -12,16 +12,13 @@ gulp.task('pug', function buildHTML() {
     .pipe(gulp.dest('.'))
 });
 
-gulp.task('pug:watch', function () {
-  gulp.watch('index.pug', ['sass']);
-});
-
 gulp.task('sass', function () {
   return gulp.src('styles.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('.'));
 });
- 
-gulp.task('sass:watch', function () {
+
+gulp.task('watch', function () {
+  gulp.watch('index.pug', ['pug']);
   gulp.watch('styles.scss', ['sass']);
 });
