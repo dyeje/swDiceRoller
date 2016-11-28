@@ -1,71 +1,30 @@
+- var dieTypes = ['yellow', 'green', 'blue', 'red', 'purple', 'black', 'force']
+
 html
   head
     title Star Wars Dice Roller
     link(rel='stylesheet', href='styles.css')
+
   body
     h1 Star Wars Dice Roller
     form.dice-form
-      .die-control
-        label(for='yellow') yellow
-        |  
-        input(name='yellow', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
-      .die-control
-        label(for='green') green
-        |  
-        input(name='green', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
-      .die-control
-        label(for='blue') blue
-        |  
-        input(name='blue', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
-      .die-control
-        label(for='red') red
-        |  
-        input(name='red', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
-      .die-control
-        label(for='purple') purple
-        |  
-        input(name='purple', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
-      .die-control
-        label(for='black') black
-        |  
-        input(name='black', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
-      .die-control
-        label(for='force') force
-        |  
-        input(name='force', min='0', value='2')
-        |  
-        a.quantity-control.up(href='#') &#x25B2;
-        |  
-        a.quantity-control.down(href='#') &#x25BC;
+      each dieType in dieTypes
+        .die-control
+          label(for=dieType)= dieType
+          |
+          input(name=dieType, min='0', value='2')
+          |
+          a.quantity-control.up(href='#') &#x25B2;
+          |
+          a.quantity-control.down(href='#') &#x25BC;
     |  
+
     a.roll(href='javascript:;') Roll!
+
     br
     br
-    div
+
+    div.results
       .success-container
         .success-label(style='font-weight: bold; display: inline;') Success:
         .success-value(style='display: inline; margin-left: 5px;')
@@ -81,6 +40,7 @@ html
       .special-container
         .special-label(style='font-weight: bold; display: inline;') Special:
         .special-value(style='display: inline; margin-left: 5px;')
+
       div
         script(src='js/dependencies/lodash.min.js')
         script(src='js/dependencies/jquery.min.js')
