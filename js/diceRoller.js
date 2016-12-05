@@ -1,4 +1,5 @@
 var diceForm = $('form.dice-form');
+var results = $('.results')
 
 $('a.quantity-control').click(function (e) {
   e.preventDefault();
@@ -31,36 +32,21 @@ $('a.roll').click(function (e) {
 });
 
 function displayResults (diceResults) {
-  //success
-  var successDisplay = diceResults.success;
+  results.find('.success .value').html(displayValue(diceResults.success, "success", "failure"));
+  results.find('.advantage .value').html(displayValue(diceResults.advantage, "advantage", "disadvantage"));
+  results.find('.lightside .value').html(diceResults.lightside);
+  results.find('.darkside .value').html(diceResults.darkside);
+  results.find('.special .value').html(diceResults.special.join(', '))
+}
 
-  if (successDisplay > 0) {
-    successDisplay = successDisplay + " success"
-  } else if (successDisplay < 0) {
-    successDisplay = Math.abs(successDisplay) + " failure"
+function displayValue(value, positive, negative) {
+  if (value > 0) {
+    value = value + " " + positive;
+  } else if (value < 0) {
+    value = Math.abs(value) + " " + negative;
   }
 
-  $('.success-value').html(successDisplay);
-
-  //advantage
-  var advantageDisplay = diceResults.advantage;
-
-  if (advantageDisplay > 0) {
-    advantageDisplay = advantageDisplay + " advantage"
-  } else if (advantageDisplay < 0) {
-    advantageDisplay = Math.abs(advantageDisplay) + " disadvantage"
-  }
-
-  $('.advantage-value').html(advantageDisplay);
-
-  //lightside
-  $('.lightside-value').html(diceResults.lightside);
-
-  //darkside
-  $('.darkside-value').html(diceResults.darkside);
-
-  //speial
-  $('.special-value').html(diceResults.special.join(', '))
+  return value;
 }
 
 function randomInt(max) {

@@ -1,4 +1,5 @@
 - var dieTypes = ['yellow', 'green', 'blue', 'red', 'purple', 'black', 'force']
+- var resultTypes = ['success', 'advantage', 'lightside', 'darkside', 'special']
 
 html
   head
@@ -11,13 +12,9 @@ html
       each dieType in dieTypes
         .die-control
           label(for=dieType)= dieType
-          |
           input(name=dieType, min='0', value='2')
-          |
           a.quantity-control.up(href='#') &#x25B2;
-          |
           a.quantity-control.down(href='#') &#x25BC;
-    |  
 
     a.roll(href='javascript:;') Roll!
 
@@ -25,24 +22,13 @@ html
     br
 
     div.results
-      .success-container
-        .success-label(style='font-weight: bold; display: inline;') Success:
-        .success-value(style='display: inline; margin-left: 5px;')
-      .advantage-container
-        .advantage-label(style='font-weight: bold; display: inline;') Advantage:
-        .advantage-value(style='display: inline; margin-left: 5px;')
-      .lightside-container
-        .lightside-label(style='font-weight: bold; display: inline;') Lightside:
-        .lightside-value(style='display: inline; margin-left: 5px;')
-      .darkside-container
-        .darkside-label(style='font-weight: bold; display: inline;') Darkside:
-        .darkside-value(style='display: inline; margin-left: 5px;')
-      .special-container
-        .special-label(style='font-weight: bold; display: inline;') Special:
-        .special-value(style='display: inline; margin-left: 5px;')
+      each resultType in resultTypes
+        .result-container(class=resultType)
+          .label= resultType + ":"
+          .value
 
-      div
-        script(src='js/dependencies/lodash.min.js')
-        script(src='js/dependencies/jquery.min.js')
-        script(src='js/dice.js')
-        script(src='js/diceRoller.js')
+    div.scripts
+      script(src='js/dependencies/lodash.min.js')
+      script(src='js/dependencies/jquery.min.js')
+      script(src='js/dice.js')
+      script(src='js/diceRoller.js')

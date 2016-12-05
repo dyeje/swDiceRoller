@@ -2,3 +2,16 @@
   text-decoration: none;
   color: black;
 }
+
+.result-container {
+  .label {
+    display: inline;
+    font-weight: bold;
+    text-transform:capitalize;
+  }
+
+  .value {
+    display: inline;
+    margin-left: 5px;
+  }
+}
