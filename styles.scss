@@ -1,6 +1,58 @@
-.quantity-control {
+$background: #F4F4F4;
+$header-text: #5B2B16;
+$regular-text: #5A2B1A;
+$link: #4186CD;
+$link-background: #E5F3FD;
+
+body {
+  font-family: sans-serif;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  background-color: $background;
+  color: $regular-text;
+}
+
+h1 {
+  color: $header-text;
+}
+
+a {
+  display: inline-block;
   text-decoration: none;
-  color: black;
+  color: $link;
+  border: 1px solid $link;
+  padding: 5px;
+  background-color: $link-background;
+  border-radius: 5px;
+}
+
+.die-control {
+  margin-bottom: 10px;
+  label {
+    display: inline-block;
+    width: 50px;
+    margin-right: 5px;
+    text-transform:capitalize;
+    vertical-align: middle;
+  }
+
+  input {
+    padding: 5px;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0px 10px 0px 5px;
+  }
+}
+
+.quantity-control {
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+  text-decoration: none;
 }
 
 .result-container {
