@@ -12,8 +12,8 @@ html
       each dieType in dieTypes
         .die-control
           label(for=dieType)= dieType
-          input(name=dieType, min='0', value='2')
           a.quantity-control.up(href='#') +
+          input(name=dieType, min='0', value='2')
           a.quantity-control.down(href='#') -
 
     a.roll(href='javascript:;') Roll!
