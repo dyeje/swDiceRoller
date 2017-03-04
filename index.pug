@@ -5,12 +5,14 @@ html
   head
     title Star Wars Dice Roller
     link(rel='stylesheet', href='styles.css')
+    link(rel='stylesheet', href='shapes.css')
 
   body
     h1 Star Wars Dice Roller
     form.dice-form
       each dieType in dieTypes
         .die-control
+          div.symbol(class=dieType)
           label(for=dieType)= dieType
           a.quantity-control.up(href='#') +
           input(name=dieType, min='0', value='2')

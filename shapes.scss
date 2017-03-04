@@ -1,0 +1,95 @@
+$hexagon-width: 30px;
+$hexagon-side-height: 10px;
+@mixin hexagon($color) {
+  width: $hexagon-width;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  background-color: $color;
+  -webkit-transform: rotate(90deg); 
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -$hexagon-side-height;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: ($hexagon-width/2) solid transparent;
+    border-right: ($hexagon-width/2) solid transparent;
+    border-bottom: $hexagon-side-height solid $color;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -$hexagon-side-height;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: ($hexagon-width/2) solid transparent;
+    border-right: ($hexagon-width/2) solid transparent;
+    border-top: $hexagon-side-height solid $color;
+  }
+}
+
+$square-size: 30px;
+@mixin square($color) {
+  display: inline-block;
+  background-color: $color;
+  width: $square-size;
+  height: $square-size;
+}
+
+$diamond-size: 15px;
+@mixin diamond($color) {
+  width: 0;
+  height: 0;
+  border: $diamond-size solid transparent;
+  border-bottom: ($diamond-size * 4/3) solid $color;
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -$diamond-size;
+    top: ($diamond-size * 4/3);
+    width: 0;
+    height: 0;
+    border: $diamond-size solid transparent;
+    border-top: ($diamond-size * 4/3) solid $color;
+  }
+}
+
+.symbol {
+  &.yellow {
+    @include hexagon(yellow);
+  }
+
+  &.green {
+    @include diamond(green);
+  }
+
+  &.blue {
+    @include square(blue);
+  }
+
+  &.red {
+    @include hexagon(red);
+  }
+
+  &.purple {
+    @include diamond(purple);
+  }
+
+  &.black {
+    @include square(black);
+  }
+
+  &.force {
+    @include square(white);
+  }
+}
