@@ -1,43 +1,48 @@
+@mixin shape {
+  display: inline-block;
+  position: relative;
+  left: -7px;
+}
+
 $hexagon-width: 30px;
 $hexagon-side-height: 10px;
+@mixin hexagon-pseudo {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: ($hexagon-width/2) solid transparent;
+  border-right: ($hexagon-width/2) solid transparent;
+}
+
 @mixin hexagon($color) {
+  @include shape;
   width: $hexagon-width;
   height: 18px;
-  position: relative;
-  display: inline-block;
+  top: 5px;
   background-color: $color;
   -webkit-transform: rotate(90deg); 
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 
   &:before {
-    content: "";
-    position: absolute;
+    @include hexagon-pseudo;
     top: -$hexagon-side-height;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: ($hexagon-width/2) solid transparent;
-    border-right: ($hexagon-width/2) solid transparent;
     border-bottom: $hexagon-side-height solid $color;
   }
 
   &:after {
-    content: "";
-    position: absolute;
+    @include hexagon-pseudo;
     bottom: -$hexagon-side-height;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: ($hexagon-width/2) solid transparent;
-    border-right: ($hexagon-width/2) solid transparent;
     border-top: $hexagon-side-height solid $color;
   }
 }
 
-$square-size: 30px;
+$square-size: 28px;
 @mixin square($color) {
-  display: inline-block;
+  @include shape;
+  top: 9px;
   background-color: $color;
   width: $square-size;
   height: $square-size;
@@ -45,12 +50,12 @@ $square-size: 30px;
 
 $diamond-size: 15px;
 @mixin diamond($color) {
+  @include shape;
   width: 0;
   height: 0;
   border: $diamond-size solid transparent;
   border-bottom: ($diamond-size * 4/3) solid $color;
-  position: relative;
-  display: inline-block;
+  top: -5px;
 
   &:after {
     content: '';
@@ -66,23 +71,23 @@ $diamond-size: 15px;
 
 .symbol {
   &.yellow {
-    @include hexagon(yellow);
+    @include hexagon(#E9D23F);
   }
 
   &.green {
-    @include diamond(green);
+    @include diamond(#4F6441);
   }
 
   &.blue {
-    @include square(blue);
+    @include square(#9CBBF1);
   }
 
   &.red {
-    @include hexagon(red);
+    @include hexagon(#B73C40);
   }
 
   &.purple {
-    @include diamond(purple);
+    @include diamond(#3B2956);
   }
 
   &.black {

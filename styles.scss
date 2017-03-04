@@ -1,8 +1,8 @@
-$background: #F4F4F4;
+$background: #C6C4C8;
 $header-text: #5B2B16;
 $regular-text: #5A2B1A;
-$link: #4186CD;
-$link-background: #E5F3FD;
+$link: #1973CD;
+$link-background: #B1DEFD;
 
 body {
   font-family: sans-serif;
@@ -25,6 +25,10 @@ a {
   padding: 5px;
   background-color: $link-background;
   border-radius: 5px;
+
+  &.roll {
+    padding: 15px;
+  }
 }
 
 .die-control {
