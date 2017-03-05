@@ -12,24 +12,26 @@ html
     form.dice-form
       each dieType in dieTypes
         .die-control
-          div.symbol(class=dieType)
+          .symbol(class=dieType)
           label(for=dieType)= dieType
           a.quantity-control.up(href='#') +
           input(name=dieType, min='0', value='2')
           a.quantity-control.down(href='#') -
+        if dieType == 'blue' || dieType == 'black'
+          .clear
 
     a.roll(href='javascript:;') Roll!
 
     br
     br
 
-    div.results
+    .results
       each resultType in resultTypes
         .result-container(class=resultType)
           .label= resultType + ":"
           .value
 
-    div.scripts
+    .scripts
       script(src='js/dependencies/lodash.min.js')
       script(src='js/dependencies/jquery.min.js')
       script(src='js/dice.js')
