@@ -14,17 +14,14 @@ html
           .symbol(class=dieType)
           label(for=dieType)= dieType
           a.quantity-control.up(href='#') +
-          input(name=dieType, min='0', value='2')
+          input(name=dieType, min='0', value='0')
           a.quantity-control.down(href='#') -
         if dieType == 'blue' || dieType == 'black'
           .clear
 
-    a.roll(href='javascript:;') Roll!
+    a.roll(href='javascript:;') Roll
 
-    br
-    br
-
-    .results
+    .results.hidden
       each resultType in resultTypes
         .result-container(class=resultType)
           .label= resultType + ":"

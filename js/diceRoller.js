@@ -29,6 +29,7 @@ $('a.roll').click(function (e) {
 
   var diceResults = roll(diceSets);
   displayResults(sumDiceResults(diceResults));
+  results.removeClass('hidden');
 });
 
 function displayResults (diceResults) {

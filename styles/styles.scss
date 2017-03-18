@@ -14,7 +14,7 @@ body {
   font-family: sans-serif;
   margin: auto;
   width: 50%;
-  padding-top: 20px;
+  padding-top: 25px;
   text-align: center;
   background-color: $background;
   color: $regular-text;
@@ -38,6 +38,8 @@ a {
 
   &.roll {
     padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
   }
 }
 
@@ -82,9 +84,17 @@ a {
   }
 }
 
+.results {
+  padding-left: 75px;
+  text-align: left;
+  margin: auto;
+  width: 225px;
+}
+
 .result-container {
   .label {
-    display: inline;
+    display: inline-block;
+    width: 90px;
     font-weight: bold;
     text-transform:capitalize;
   }
@@ -93,6 +103,10 @@ a {
     display: inline;
     margin-left: 5px;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 .clear {
