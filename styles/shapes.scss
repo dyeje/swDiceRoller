@@ -4,6 +4,7 @@
   left: -7px;
 }
 
+// Hexago
 $hexagon-width: 30px;
 $hexagon-side-height: 10px;
 @mixin hexagon-pseudo {
@@ -39,15 +40,7 @@ $hexagon-side-height: 10px;
   }
 }
 
-$square-size: 28px;
-@mixin square($color) {
-  @include shape;
-  top: 9px;
-  background-color: $color;
-  width: $square-size;
-  height: $square-size;
-}
-
+// Diamond
 $diamond-size: 15px;
 @mixin diamond($color) {
   @include shape;
@@ -67,6 +60,16 @@ $diamond-size: 15px;
     border: $diamond-size solid transparent;
     border-top: ($diamond-size * 4/3) solid $color;
   }
+}
+
+// Square
+$square-size: 28px;
+@mixin square($color) {
+  @include shape;
+  top: 9px;
+  background-color: $color;
+  width: $square-size;
+  height: $square-size;
 }
 
 .symbol {
