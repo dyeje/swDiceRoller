@@ -1,16 +1,26 @@
 $background: #C6C4C8;
+$background-accent: #9C939F;
+$background-border: #69606c;
 $header-text: #5B2B16;
 $regular-text: #5A2B1A;
 $link: #1973CD;
 $link-background: #B1DEFD;
 
+html {
+  background-color: $background-accent;
+}
+
 body {
   font-family: sans-serif;
   margin: auto;
   width: 50%;
+  padding-top: 20px;
   text-align: center;
   background-color: $background;
   color: $regular-text;
+  border-style: solid;
+  border-color: $background-border;
+  border-width: 0px 3px 0px 3px;
 }
 
 h1 {
@@ -35,6 +45,7 @@ a {
   display: inline-block;
   width: calc(100% / 3);
   margin-bottom: 10px;
+
   label {
     display: inline-block;
     width: 50px;
@@ -87,3 +98,23 @@ a {
 .clear {
   clear: both;
 }
+
+@media only screen and (max-width: 1350px) {
+  body {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  body {
+    width: 100%;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .die-control {
+    width: 100%;
+  }
+}
+
