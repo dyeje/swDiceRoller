@@ -10,6 +10,7 @@
   "author": "Jeremy Dye",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.3.0",
     "gulp-pug": "^3.1.0",
     "gulp-sass": "^2.3.2"
   },
