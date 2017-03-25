@@ -21,7 +21,6 @@ $hexagon-side-height: 10px;
   @include shape;
   width: $hexagon-width;
   height: 18px;
-  top: 5px;
   background-color: $color;
   -webkit-transform: rotate(90deg); 
   -ms-transform: rotate(90deg);
@@ -46,9 +45,9 @@ $diamond-size: 15px;
   @include shape;
   width: 0;
   height: 0;
+  top: -18px;
   border: $diamond-size solid transparent;
   border-bottom: ($diamond-size * 4/3) solid $color;
-  top: -5px;
 
   &:after {
     content: '';
@@ -66,7 +65,6 @@ $diamond-size: 15px;
 $square-size: 28px;
 @mixin square($color) {
   @include shape;
-  top: 9px;
   background-color: $color;
   width: $square-size;
   height: $square-size;

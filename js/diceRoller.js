@@ -15,11 +15,14 @@ $('a.quantity-control').click(function (e) {
 
 $('a.roll').click(function (e) {
   var diceInputs = diceForm.serializeArray();
+  var forceDiceUsed = false;
 
   var diceSets = _.compact(_.map(diceInputs, function (diceInput) {
     var diceCount = parseInt(diceInput.value, 10);
 
     if (diceCount > 0) {
+      if (diceInput.name ==='force') forceDiceUsed = true;
+
       return {
         diceCount: diceCount,
         diceType: mapDiceType(diceInput.name)
@@ -28,16 +31,19 @@ $('a.roll').click(function (e) {
   }));
 
   var diceResults = roll(diceSets);
-  displayResults(sumDiceResults(diceResults));
+  displayResults(sumDiceResults(diceResults), forceDiceUsed);
   results.removeClass('hidden');
 });
 
-function displayResults (diceResults) {
+function displayResults (diceResults, forceDiceUsed) {
   results.find('.success .value').html(displayValue(diceResults.success, "success", "failure"));
   results.find('.advantage .value').html(displayValue(diceResults.advantage, "advantage", "disadvantage"));
   results.find('.lightside .value').html(diceResults.lightside);
   results.find('.darkside .value').html(diceResults.darkside);
-  results.find('.special .value').html(diceResults.special.join(', '))
+  results.find('.special .value').html(diceResults.special.join(', '));
+
+  results.find('.darkside, .lightside').toggle(forceDiceUsed);
+  results.find('.special').toggle(diceResults.special.length > 0);
 }
 
 function displayValue(value, positive, negative) {

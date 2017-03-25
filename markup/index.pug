@@ -26,6 +26,8 @@ html
         .result-container(class=resultType)
           .label= resultType + ":"
           .value
+        if dieType == 'advantage' || dieType == 'darkside'
+          .clear
 
     .scripts
       script(src='../js/dependencies/lodash.min.js')

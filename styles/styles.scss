@@ -44,8 +44,12 @@ a {
 }
 
 .die-control {
-  display: inline-block;
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
   width: calc(100% / 3);
+  height: 50px;
   margin-bottom: 10px;
 
   label {
@@ -66,6 +70,10 @@ a {
     border-top: 1px solid #4186CD;
     border-bottom: 1px solid #4186CD;
   }
+
+  &:last-child {
+    width: 100%;
+  }
 }
 
 .quantity-control {
@@ -85,23 +93,29 @@ a {
 }
 
 .results {
-  padding-left: 75px;
-  text-align: left;
+  width: 400px;
   margin: auto;
-  width: 225px;
 }
 
 .result-container {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+
   .label {
     display: inline-block;
-    width: 90px;
     font-weight: bold;
-    text-transform:capitalize;
+    text-transform: capitalize;
   }
 
   .value {
     display: inline;
     margin-left: 5px;
+  }
+
+  &.special {
+    width: 100%;
   }
 }
 
@@ -131,4 +145,3 @@ a {
     width: 100%;
   }
 }
-
