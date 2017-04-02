@@ -16,7 +16,7 @@ gulp.task('pug', function buildHTML() {
 gulp.task('sass', function () {
   return gulp.src('styles/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(concatCss("site.css"))
+    .pipe(concatCss("swDiceRoller.css"))
     .pipe(gulp.dest('out/'));
 });
 
