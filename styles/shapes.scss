@@ -96,6 +96,6 @@ $square-size: 28px;
   }
 
   &.force {
-    @include square(white);
+    @include hexagon(white);
   }
 }
