@@ -8,7 +8,7 @@ var concatCss = require('gulp-concat-css');
 gulp.task('default', ['sass', 'pug']);
 
 gulp.task('pug', function buildHTML() {
-  return gulp.src('markup/index.pug')
+  return gulp.src('markup/swDiceRoller.pug')
     .pipe(pug({}))
     .pipe(gulp.dest('out/'))
 });
