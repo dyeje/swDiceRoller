@@ -93,7 +93,8 @@ a {
 }
 
 .results {
-  width: 400px;
+  max-width: 400px;
+  height: 100px;
   margin: auto;
 }
 
@@ -120,7 +121,7 @@ a {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .clear {
@@ -143,5 +144,12 @@ a {
 @media only screen and (max-width: 650px) {
   .die-control {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .result-container {
+    font-size: 0.85em;
+    letter-spacing: -1px;
   }
 }
