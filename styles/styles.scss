@@ -6,12 +6,23 @@ $regular-text: #5A2B1A;
 $link: #1973CD;
 $link-background: #B1DEFD;
 
+@font-face {
+  font-family: 'elektra';
+  src: url('./assets/ElektraMediumPro.otf');
+}
+
+@font-face {
+  font-family: 'galaxy';
+  src: url('./assets/SFDistantGalaxy.ttf');
+}
+
 html {
+  background-image: url('./assets/stars.png');
   background-color: $background-accent;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'elektra';
   margin: auto;
   width: 50%;
   padding-top: 25px;
@@ -24,10 +35,14 @@ body {
 }
 
 h1 {
+  font-family: 'galaxy';
+  font-weight: normal;
   color: $header-text;
 }
 
 a {
+  font-family: sans-serif;
+  font-weight: bold;
   display: inline-block;
   text-decoration: none;
   color: $link;
@@ -37,7 +52,7 @@ a {
   border-radius: 5px;
 
   &.roll {
-    padding: 15px;
+    padding: 10px 15px;
     margin-top: 15px;
     margin-bottom: 30px;
   }
